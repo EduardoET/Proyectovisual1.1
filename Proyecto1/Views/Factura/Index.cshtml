@@ -1,0 +1,53 @@
+﻿@model Paginacion 
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-6">
+<h1>Listado de Facturas</h1>
+</div>
+    <div class="col-sm-6">
+        <a class="btn btn-sucess d-block"
+             asp-controller="Facturas" asp-action="Create" >Nueva Factura</a>
+ </div>
+</div>
+@using (Html.BeginForm(FormMethod.Get))
+{
+    <label>Nombre</label>
+    <input type="text" name="Nombre" id="Nombre"/>
+     <input type="submit" value="Filtrar" class="btn btn-sucess"/>
+}
+<table class="table table-bordered table-table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        
+        <th>Email</th>
+        <th>Telefono</th>
+        <th>Tipo</th>
+        <th>Estado</th>
+    </tr>
+     @foreach(Factura factura in Model.entidades)
+    {
+        <tr>
+            <td>@factura.Id</td>
+            <td>@factura.Nombre</td>
+            <td>@factura.Email</td>
+            <td>@factura.Telefono</td>
+            <td>@factura.Tipo</td>
+            <td>@factura.Estado</td>
+            <td>
+                <a asp-controller="Factura" asp-action="Edit" asp-route-id="@factura.Id">Editar</a>
+                <a asp-controller="Factura" asp-action="Delete" asp-route-id="@factura.Id">Borrar</a>
+                
+            </td>
+        </tr>
+        }
+</table>
+
+@{
+    Html.RenderPartial("_paginacion", Model);
+}
+

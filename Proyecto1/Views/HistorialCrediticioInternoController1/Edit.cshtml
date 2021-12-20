@@ -1,0 +1,22 @@
+﻿@model HistorialCrediticioInterno 
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edititar Historial Crediticio Interno </h1>
+
+<forn method="post" asp-action= "Edit">
+    <input asp-for="Id" Type="hidden"/>
+    <label>Puntaje</label>
+    <input asp-for="Puntaje" />
+    <br/>
+    <label>Deudas Activas</label>
+    <input asp-for="DeudasActivas" />
+    <br/>
+    <label>Deudas Vencidas</label>
+    <input asp-for="DeudasVencidas" />
+    <br/>
+ <input type="submit" value="Guardar"/>
+ </forn>
+

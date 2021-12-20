@@ -1,0 +1,27 @@
+﻿@model Factura
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar Factura</h1>
+<forn method="post" asp-action= "Edit">
+    <input asp-for="Id" Type="hidden"/>
+     <label>Nombre</label>
+    <input asp-for="Nombre" />
+    <br/>
+    <br/>
+    <label>Telefono</label>
+    <input asp-for="Telefono" />
+    <br/>
+    <label>Email</label>
+    <input asp-for="Email" />
+    <br/>
+    <label>Tipo</label>
+    <input asp-for="Tipo" />
+    <br/>
+     <label>Estado</label>
+    <input asp-for="Estado" />
+    <br/>
+    <input type="submit" value="Guardar"/>
+</forn>

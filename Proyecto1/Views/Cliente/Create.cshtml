@@ -1,0 +1,28 @@
+﻿@model Cliente
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Crear un Cliente</h1>
+<forn method="post" asp-action= "Create">
+
+    <label>Nombre</label>
+    <input asp-for="Nombre" />
+    <br/>
+    <label>Apellido</label>
+    <input asp-for="Apellido" />
+    <br/>
+    <label>Telefono</label>
+    <input asp-for="Telefono" />
+    <br/>
+    <label>Email</label>
+    <input asp-for="Email" />
+    <br/>
+    <label>Tipo</label>
+    <input asp-for="Tipo" />
+    <br/>
+
+    <input type="submit" value="Crear"/>
+</forn>
+

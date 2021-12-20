@@ -1,0 +1,51 @@
+﻿@model Paginacion
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+
+}
+
+<div class="row">
+    <div class="col-sm-6">
+<h1>Lista de Productos</h1>
+</div>
+    <div class="col-sm-6">
+
+<a class="btn btn-sucess d-block"
+asp-controller="Producto" asp-action="Create">Nuevo Producto</a>
+</div>  
+</div>
+@using (Html.BeginForm(FormMethod.Get))
+{
+    <label>Nombre</label>
+    <input type="text" name="Nombre" id="Nombre"/>
+     <input type="submit" value="Filtrar" class="btn btn-sucess"/>
+}
+
+<table class="table table-bordered table-table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Marca</th>
+        <th>Precio</th>
+        <th>Stock</th>
+    </tr>
+    @foreach(Producto producto in Model.entidades)
+    {
+        <tr>
+            <td>@producto.Id</td>
+            <td>@producto.Nombre</td>
+            <td>@producto.Marca</td>
+            <td>@producto.Precio</td>
+            <td>@producto.Stock</td>
+            <td>
+                <a asp-controller="Producto" asp-action="Edit" asp-route-id="@producto.Id">Editar</a>
+                <a asp-controller="Producto" asp-action="Delete" asp-route-id="@producto.Id">Borrar</a>
+            </td>
+        </tr>
+    }
+</table>
+@{
+    Html.RenderPartial("_paginacion", Model);
+}

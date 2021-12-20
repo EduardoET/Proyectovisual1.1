@@ -1,0 +1,44 @@
+﻿@model Paginacion
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+   
+}
+
+<div class="row">
+    <div class="col-sm-6">
+<h1>Listado de Historial Crediticio</h1>
+    </div>
+    <div class="col-sm-6">
+    <a class="btn btn-sucess d-block"
+    asp-controller="HistorialCrediticioInterno" asp-action="Create" >Nuevo Credito Interno</a>
+ </div>  
+</div>
+
+<table class="table table-bordered table-table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Puntaje</th>
+        <th>DeudasActivas</th>
+        <th>DeudasVencidas</th>
+
+    </tr>
+     @foreach(HistorialCrediticioInterno historialCrediticioInterno in Model.entidades)
+    {
+        <tr>
+            <td>@historialCrediticioInterno.Id</td>
+            <td>@historialCrediticioInterno.Puntaje</td>
+            <td>@historialCrediticioInterno.DeudasActivas</td>
+            <td>@historialCrediticioInterno.DeudasVencidas</td>
+            <td>
+                <a asp-controller="HistorialCrediticioInterno" asp-action="Edit" asp-route-id="@historialCrediticioInterno.Id">Editar</a>
+                 <a asp-controller="HistorialCrediticioInterno" asp-action="Delete" asp-route-id="@historialCrediticioInterno.Id">Borrar</a>
+            </td>
+
+        </tr>
+        }
+</table>
+@{
+    Html.RenderPartial("_paginacion", Model);
+}
+

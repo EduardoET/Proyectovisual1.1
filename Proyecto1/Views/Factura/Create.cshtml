@@ -1,0 +1,31 @@
+﻿@model Factura
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Listado de Facturas</h1>
+
+<h1>Crear un Factura</h1>
+<forn method="post" asp-action= "Create">
+
+    <label>Nombre</label>
+    <input asp-for="Nombre" />
+    <br/>
+    <br/>
+    <label>Telefono</label>
+    <input asp-for="Telefono" />
+    <br/>
+    <label>Email</label>
+    <input asp-for="Email" />
+    <br/>
+    <label>Tipo</label>
+    <input asp-for="Tipo" />
+    <br/>
+     <label>Estado</label>
+    <input asp-for="Estado" />
+    <br/>
+
+    <input type="submit" value="Crear"/>
+</forn>
+

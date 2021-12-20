@@ -1,0 +1,30 @@
+﻿@model Factura
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Confirmar el Borrador</h1>
+
+<forn method="post" asp-action= "Delete">
+    <input asp-for="Id" Type="hidden"/>
+     <label>Nombre</label>
+    <input asp-for="Nombre" />
+    <br/>
+    <br/>
+    <label>Telefono</label>
+    <input asp-for="Telefono" />
+    <br/>
+    <label>Email</label>
+    <input asp-for="Email" />
+    <br/>
+    <label>Tipo</label>
+    <input asp-for="Tipo" />
+    <br/>
+     <label>Estado</label>
+    <input asp-for="Estado" />
+    <br/>
+     <input type="submit" value="Borrar"/>
+</forn>
+
+

@@ -1,0 +1,26 @@
+﻿@model Producto
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Crear un Producto</h1>
+
+<forn method="post" asp-action= "Create">
+
+    <label>Nombre</label>
+    <input asp-for="Nombre" />
+    <br/>
+    <label>Marca</label>
+    <input asp-for="Marca" />
+    <br/>
+    <label>Precio</label>
+    <input asp-for="Precio" />
+    <br/>
+    <label>Stock</label>
+    <input asp-for="Stock" />
+    <br/>
+
+    <input type="submit" value="Crear"/>
+</forn>
+

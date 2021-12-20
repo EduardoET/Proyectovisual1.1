@@ -1,0 +1,21 @@
+﻿@model Credito 
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Confirmar el Borrador</h1>
+
+<forn method="post" asp-action= "Delete">
+    <input asp-for="Id" Type="hidden"/>
+
+    
+    <label>Tipo</label>
+    <input asp-for="Tipo" />
+    <br/>
+    <label>Fecha de solicitud</label>
+    <input asp-for="Fecha_Solicitud" />
+     <br/>
+     <input type="submit" value="Borrar"/>
+</forn>
+

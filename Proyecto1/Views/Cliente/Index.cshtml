@@ -1,0 +1,53 @@
+﻿@model Paginacion
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-6">
+<h1>Lista de clientes</h1>
+    </div>
+    <div class="col-sm-6">
+        <a class="btn btn-sucess d-block" 
+        asp-controller="Cliente" asp-action="Create" >Nuevo Cliente</a>
+    </div>
+</div>
+
+@using (Html.BeginForm(FormMethod.Get))
+{
+    <label>Nombre</label>
+    <input type="text" name="Nombre" id="Nombre"/>
+     <input type="submit" value="Filtrar" class="btn btn-sucess"/>
+}
+
+
+<table class="table table-bordered table-table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Telefono</th>
+        <th>Tipo</th>
+    </tr>
+     @foreach(Cliente cliente in Model.entidades)
+    {
+        <tr>
+            <td>@cliente.Id</td>
+            <td>@cliente.Nombre</td>
+            <td>@cliente.Apellido</td>
+            <td>@cliente.Email</td>
+            <td>@cliente.Telefono</td>
+            <td>@cliente.Tipo</td>
+            <td>
+                <a asp-controller="Cliente" asp-action="Edit" asp-route-id="@cliente.Id">Editar</a>
+                <a asp-controller="Cliente" asp-action="Delete" asp-route-id="@cliente.Id">Borrar</a>
+            </td>
+        </tr>
+        }
+</table>
+
+@{
+    Html.RenderPartial("_paginacion", Model);
+}

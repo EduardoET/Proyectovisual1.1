@@ -1,0 +1,28 @@
+﻿@model Cliente 
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Condirmar el borrado</h1>
+<forn method="post" asp-action= "Delete">
+    <input asp-for="Id" Type="hidden"/>
+    
+    <label>Nombre</label>
+    <input asp-for="Nombre" />
+    <br/>
+    <label>A`pellido</label>
+    <input asp-for="Apellido" />
+    <br/>
+    <label>Telefono</label>
+    <input asp-for="Telefono" />
+    <br/>
+    <label>Email</label>
+    <input asp-for="Email" />
+    <br/>
+    <label>Tipo</label>
+    <input asp-for="Tipo" />
+    <br/>
+    <input type="submit" value="Borrar"/>
+</forn>
+

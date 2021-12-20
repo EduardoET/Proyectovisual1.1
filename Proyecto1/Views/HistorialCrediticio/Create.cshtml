@@ -1,0 +1,24 @@
+﻿@model HistorialCrediticio
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Listado de Historial Crediticio</h1>
+
+<h1>Crear un Historial Crediticio</h1>
+<forn method="post" asp-action= "Create">
+
+    <label>Puntaje</label>
+    <input asp-for="Puntaje" />
+    <br/>
+    <label>Deudas Activas</label>
+    <input asp-for="DeudasActivas" />
+    <br/>
+    <label>Deudas Vencidas</label>
+    <input asp-for="DeudasVencidas" />
+    <br/>
+
+    <input type="submit" value="Crear"/>
+</forn>
+

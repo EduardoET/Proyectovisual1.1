@@ -1,0 +1,22 @@
+﻿@model Credito
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Listado de credito</h1>
+
+<h1>Crear un Credito</h1>
+<forn method="post" asp-action= "Create">
+
+    <label>Tipo</label>
+    <input asp-for="Tipo" />
+    <br/>
+    <label>Fecha de solicitud</label>
+    <input asp-for="Fecha_Solicitud" />
+     <br/>
+
+    <input type="submit" value="Crear"/>
+</forn>
+
+
